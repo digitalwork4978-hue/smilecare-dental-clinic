@@ -1,41 +1,40 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dental Implants | SmileCare Dental Clinic",
+  description:
+    "Permanent dental implant solutions in Tirupati for missing teeth.",
+};
+
 export default function DentalImplantsPage() {
   return (
-    <div className="max-w-5xl mx-auto py-20 px-6">
-      <h1 className="text-4xl font-bold mb-6">
+    <main className="max-w-6xl mx-auto px-6 py-20">
+      <h1 className="text-5xl font-bold text-sky-700">
         Dental Implants
       </h1>
 
-      <p className="text-lg mb-6">
-        Dental implants are permanent replacements for missing teeth that
-        look, feel, and function like natural teeth.
+      <p className="mt-6 text-lg text-gray-600">
+        Replace missing teeth with natural-looking dental implants for a
+        confident smile.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-3xl font-bold mt-10">
         Benefits
       </h2>
 
-      <ul className="list-disc pl-6 space-y-2">
+      <ul className="list-disc pl-6 mt-4 space-y-2">
         <li>Natural appearance</li>
         <li>Permanent solution</li>
-        <li>Improves chewing</li>
-        <li>Preserves jawbone</li>
+        <li>Improved chewing</li>
+        <li>Long-lasting results</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Procedure
-      </h2>
-
-      <p>
-        A titanium implant is placed into the jawbone, allowed to heal,
-        and topped with a custom-made crown.
-      </p>
-
       <a
-        href="/contact"
-        className="inline-block mt-8 bg-blue-600 text-white px-6 py-3 rounded"
+        href="/#appointment"
+        className="inline-block mt-10 bg-sky-600 text-white px-6 py-3 rounded-xl hover:bg-sky-700"
       >
         Book Appointment
       </a>
-    </div>
+    </main>
   );
 }

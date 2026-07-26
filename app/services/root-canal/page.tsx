@@ -1,41 +1,40 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Root Canal Treatment | SmileCare Dental Clinic",
+  description:
+    "Pain-free root canal treatment in Tirupati using advanced technology.",
+};
+
 export default function RootCanalPage() {
   return (
-    <div className="max-w-5xl mx-auto py-20 px-6">
-      <h1 className="text-4xl font-bold mb-6">
+    <main className="max-w-6xl mx-auto px-6 py-20">
+      <h1 className="text-5xl font-bold text-sky-700">
         Root Canal Treatment
       </h1>
 
-      <p className="text-lg mb-6">
-        Root Canal Treatment removes infected pulp while preserving your
-        natural tooth using advanced painless techniques.
+      <p className="mt-6 text-lg text-gray-600">
+        Save infected teeth with painless root canal treatment performed by
+        experienced dentists.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2 className="text-3xl font-bold mt-10">
         Benefits
       </h2>
 
-      <ul className="list-disc pl-6 space-y-2">
-        <li>Relieves severe tooth pain</li>
-        <li>Saves natural tooth</li>
-        <li>Stops infection</li>
-        <li>Long-lasting solution</li>
+      <ul className="list-disc pl-6 mt-4 space-y-2">
+        <li>Relieves tooth pain</li>
+        <li>Saves natural teeth</li>
+        <li>Prevents infection spread</li>
+        <li>Long-lasting treatment</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
-        Procedure
-      </h2>
-
-      <p>
-        The infected pulp is removed, the canal is cleaned, disinfected,
-        filled, and sealed to restore tooth function.
-      </p>
-
       <a
-        href="/contact"
-        className="inline-block mt-8 bg-blue-600 text-white px-6 py-3 rounded"
+        href="/#appointment"
+        className="inline-block mt-10 bg-sky-600 text-white px-6 py-3 rounded-xl hover:bg-sky-700"
       >
         Book Appointment
       </a>
-    </div>
+    </main>
   );
 }

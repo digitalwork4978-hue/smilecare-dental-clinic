@@ -55,73 +55,102 @@ export default function AppointmentForm() {
   };
 
   return (
-  <section className="py-20 bg-white">
-    <div className="max-w-3xl mx-auto px-6">
+    <section id="appointment" className="py-20 bg-white">
+      <div className="max-w-3xl mx-auto px-6">
 
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800">
-          Book an Appointment
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">
+            Book an Appointment
+          </h2>
 
-        <p className="mt-4 text-gray-500">
-          Schedule your visit with our experienced dental specialists.
-        </p>
-      </div>
+          <p className="mt-4 text-gray-500">
+            Schedule your visit with our experienced dental specialists.
+          </p>
+        </div>
 
-      <div className="bg-slate-50 rounded-3xl shadow-xl p-10 border border-slate-200">
+        <div className="bg-slate-50 rounded-3xl shadow-xl p-10 border border-slate-200">
 
-        <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit}>
 
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          />
+            <div className="grid md:grid-cols-2 gap-6">
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          />
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Full Name"
+                required
+                className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              />
 
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number"
+                required
+                className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              />
 
-          <input
-            type="date"
-            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address"
+                required
+                className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              />
 
-          <select
-            className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          >
-            <option>Select Service</option>
-            <option>Teeth Cleaning</option>
-            <option>Root Canal</option>
-            <option>Dental Implants</option>
-            <option>Teeth Whitening</option>
-          </select>
+              <input
+                type="date"
+                name="appointment_date"
+                value={formData.appointment_date}
+                onChange={handleChange}
+                required
+                className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              />
 
-          <textarea
-            rows={5}
-            placeholder="Additional Message"
-            className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-          />
+              <select
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+                className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              >
+                <option value="">Select Service</option>
+                <option value="Teeth Cleaning">Teeth Cleaning</option>
+                <option value="Root Canal">Root Canal</option>
+                <option value="Dental Implants">Dental Implants</option>
+                <option value="Teeth Whitening">Teeth Whitening</option>
+              </select>
+
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={5}
+                placeholder="Additional Message"
+                className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+              />
+
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="mt-8 w-full bg-sky-600 hover:bg-sky-700 text-white py-4 rounded-xl font-bold text-lg transition disabled:opacity-50"
+            >
+              {loading ? "Booking..." : "Book Appointment"}
+            </button>
+
+          </form>
 
         </div>
 
-        <button
-          className="mt-8 w-full bg-sky-600 hover:bg-sky-700 text-white py-4 rounded-xl font-bold text-lg transition"
-        >
-          Book Appointment
-        </button>
-
       </div>
-
-    </div>
-  </section>
-);
+    </section>
+  );
 }

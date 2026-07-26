@@ -1,41 +1,27 @@
-export default function FaqSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Do I need an appointment?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We recommend booking an appointment before visiting.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you provide Root Canal treatment?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We provide painless Root Canal treatment.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you offer Teeth Whitening?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. Professional teeth whitening services are available.",
-        },
-      },
-    ],
-  };
+import type { Metadata } from "next";
+import "./globals.css";
 
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import FaqSchema from "@/components/FaqSchema";
+
+export const metadata: Metadata = {
+  title: "SmileCare Dental Clinic | Best Dentist in Tirupati",
+  description:
+    "SmileCare Dental Clinic offers Teeth Cleaning, Root Canal, Dental Implants, Teeth Whitening and complete dental care in Tirupati.",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
-      }}
-    />
+    <html lang="en">
+      <body>
+        <LocalBusinessSchema />
+        <FaqSchema />
+        {children}
+      </body>
+    </html>
   );
 }

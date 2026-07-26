@@ -1,29 +1,34 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
-    title: "🦷 Teeth Cleaning",
+    title: "Teeth Cleaning",
+    image: "/image/cleaning.jpg",
     description:
-      "Professional cleaning to keep your teeth healthy and bright.",
+      "Professional cleaning to remove plaque and maintain healthy teeth.",
     link: "/services/teeth-cleaning",
   },
   {
-    title: "🩺 Root Canal",
+    title: "Root Canal",
+    image: "/image/rootcanal.jpg",
     description:
-      "Pain-free root canal treatment with advanced technology.",
+      "Pain-free root canal treatment using modern technology.",
     link: "/services/root-canal",
   },
   {
-    title: "😁 Teeth Whitening",
-    description:
-      "Restore a brighter, whiter smile with safe treatments.",
-    link: "/services/teeth-whitening",
-  },
-  {
-    title: "🦷 Dental Implants",
+    title: "Dental Implants",
+    image: "/image/implant.jpg",
     description:
       "Permanent replacement for missing teeth with natural results.",
     link: "/services/dental-implants",
+  },
+  {
+    title: "Teeth Whitening",
+    image: "/image/whitening.jpg",
+    description:
+      "Professional whitening treatment for a brighter smile.",
+    link: "/services/teeth-whitening",
   },
 ];
 
@@ -32,37 +37,50 @@ export default function Services() {
     <section className="bg-slate-50 py-20">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
-          Our Services
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-sky-700">
+            Our Services
+          </h2>
 
-        <p className="text-center text-gray-500 mb-14 max-w-2xl mx-auto">
-          We provide comprehensive dental care using modern technology and
-          personalised treatment plans for every patient.
-        </p>
+          <p className="mt-4 text-gray-600">
+            Complete dental care for the entire family.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition"
             >
-              <h3 className="text-2xl font-bold text-sky-600 mb-4">
-                {service.title}
-              </h3>
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={500}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
 
-              <p className="text-gray-600 mb-6">
-                {service.description}
-              </p>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-sky-700">
+                  {service.title}
+                </h3>
 
-              <Link
-                href={service.link}
-                className="inline-block bg-sky-600 text-white px-5 py-2 rounded-lg hover:bg-sky-700 transition"
-              >
-                Learn More →
-              </Link>
+                <p className="mt-3 text-gray-600">
+                  {service.description}
+                </p>
+
+                <Link
+                  href={service.link}
+                  className="inline-block mt-6 bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-lg"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
           ))}
+
         </div>
 
       </div>

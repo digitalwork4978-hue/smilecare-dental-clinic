@@ -4,34 +4,33 @@ import Image from "next/image";
 const services = [
   {
     title: "Teeth Cleaning",
-    image: "/image/cleaning.jpg",
+    image: "/image/clinic.jpg",
     description:
       "Professional cleaning to remove plaque and maintain healthy teeth.",
     link: "/services/teeth-cleaning",
   },
   {
-    title: "Root Canal",
-    image: "/image/rootcanal.jpg",
+    title: "Root Canal Treatment",
+    image: "/image/dentist.jpg",
     description:
-      "Pain-free root canal treatment using modern technology.",
+      "Pain-free root canal treatment using advanced technology.",
     link: "/services/root-canal",
   },
   {
     title: "Dental Implants",
     image: "/image/implant.jpg",
     description:
-      "Permanent replacement for missing teeth with natural results.",
+      "Permanent replacement for missing teeth with natural appearance.",
     link: "/services/dental-implants",
   },
   {
     title: "Teeth Whitening",
     image: "/image/whitening.jpg",
     description:
-      "Professional whitening treatment for a brighter smile.",
+      "Safe and effective teeth whitening treatments.",
     link: "/services/teeth-whitening",
   },
 ];
-
 export default function Services() {
   return (
     <section className="bg-slate-50 py-20">

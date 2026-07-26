@@ -55,82 +55,73 @@ export default function AppointmentForm() {
   };
 
   return (
-    <section className="py-20">
-      <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+  <section className="py-20 bg-white">
+    <div className="max-w-3xl mx-auto px-6">
+
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-gray-800">
           Book an Appointment
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <p className="mt-4 text-gray-500">
+          Schedule your visit with our experienced dental specialists.
+        </p>
+      </div>
+
+      <div className="bg-slate-50 rounded-3xl shadow-xl p-10 border border-slate-200">
+
+        <div className="grid md:grid-cols-2 gap-6">
+
           <input
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            required
+            type="text"
+            placeholder="Full Name"
+            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
           />
 
           <input
-            name="phone"
-            placeholder="Phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            required
+            type="tel"
+            placeholder="Phone Number"
+            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
           />
 
           <input
             type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            required
+            placeholder="Email Address"
+            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
+          />
+
+          <input
+            type="date"
+            className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
           />
 
           <select
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            required
+            className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
           >
-            <option value="">Select Service</option>
+            <option>Select Service</option>
             <option>Teeth Cleaning</option>
             <option>Root Canal</option>
             <option>Dental Implants</option>
             <option>Teeth Whitening</option>
           </select>
 
-          <input
-            type="date"
-            name="appointment_date"
-            value={formData.appointment_date}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            required
-          />
-
           <textarea
-            name="message"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full border p-3 rounded"
-            rows={4}
+            rows={5}
+            placeholder="Additional Message"
+            className="md:col-span-2 w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 disabled:bg-gray-500"
-          >
-            {loading ? "Booking..." : "Book Appointment"}
-          </button>
-        </form>
+        </div>
+
+        <button
+          className="mt-8 w-full bg-sky-600 hover:bg-sky-700 text-white py-4 rounded-xl font-bold text-lg transition"
+        >
+          Book Appointment
+        </button>
+
       </div>
-    </section>
-  );
+
+    </div>
+  </section>
+);
 }

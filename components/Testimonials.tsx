@@ -1,40 +1,66 @@
 export default function Testimonials() {
-  const reviews = [
+  const testimonials = [
     {
-      name: "Rahul",
-      review: "Excellent dental care. Friendly doctors and painless treatment.",
+      name: "Rahul Kumar",
+      review:
+        "Excellent service! The doctors were very friendly and my treatment was completely painless.",
+      rating: "★★★★★",
     },
     {
-      name: "Priya",
-      review: "Very clean clinic and professional staff. Highly recommended.",
+      name: "Priya Sharma",
+      review:
+        "Very clean clinic with modern equipment. I highly recommend SmileCare.",
+      rating: "★★★★★",
     },
     {
-      name: "Arjun",
-      review: "Affordable prices with excellent service. Five stars!",
+      name: "Arjun Reddy",
+      review:
+        "Professional staff and affordable prices. Booking an appointment was very easy.",
+      rating: "★★★★★",
     },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          What Our Patients Say
-        </h2>
+
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">
+            What Our Patients Say
+          </h2>
+
+          <p className="mt-4 text-gray-500">
+            Trusted by thousands of happy patients.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {reviews.map((review) => (
+          {testimonials.map((item) => (
             <div
-              key={review.name}
-              className="bg-white shadow-lg rounded-xl p-6"
+              key={item.name}
+              className="bg-white p-8 rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl transition"
             >
-              <p>"{review.review}"</p>
+              <div className="text-yellow-500 text-xl mb-4">
+                {item.rating}
+              </div>
 
-              <h3 className="mt-6 font-bold text-blue-600">
-                {review.name}
-              </h3>
+              <p className="text-gray-600 italic mb-6">
+                "{item.review}"
+              </p>
+
+              <div className="border-t pt-4">
+                <h3 className="font-bold text-sky-600">
+                  {item.name}
+                </h3>
+
+                <p className="text-sm text-gray-500">
+                  Verified Patient
+                </p>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -1,63 +1,80 @@
-import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
     title: "Teeth Cleaning",
-    description: "Professional cleaning to keep your teeth healthy.",
-    link: "/services/teeth-cleaning",
+    image: "/image/cleaning.jpg",
+    description:
+      "Professional dental cleaning removes plaque and tartar to keep your teeth healthy and your smile bright.",
   },
   {
-    title: "Root Canal",
-    description: "Safe and painless root canal treatment.",
-    link: "/services/root-canal",
+    title: "Root Canal Treatment",
+    image: "/image/rootcanal.jpg",
+    description:
+      "Pain-free root canal treatment using advanced technology to save infected teeth.",
   },
   {
     title: "Dental Implants",
-    description: "Replace missing teeth with permanent implants.",
-    link: "/services/dental-implants",
+    image: "/image/implant.jpg",
+    description:
+      "Permanent tooth replacement with natural appearance and long-lasting durability.",
   },
   {
     title: "Teeth Whitening",
-    description: "Brighten your smile with whitening treatment.",
-    link: "/services/teeth-whitening",
+    image: "/image/whitening.jpg",
+    description:
+      "Safe and effective teeth whitening treatments for a brighter smile.",
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gray-50">
-      <section className="bg-blue-600 text-white py-20 text-center">
-        <h1 className="text-5xl font-bold">Our Services</h1>
-        <p className="mt-4 text-xl">
-          Complete Dental Care for the Whole Family
-        </p>
-      </section>
+    <section className="bg-slate-50 py-20">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="text-center mb-14">
+          <h1 className="text-5xl font-bold text-sky-700">
+            Our Dental Services
+          </h1>
+
+          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+            We provide comprehensive dental care with modern technology,
+            experienced dentists and personalised treatment plans.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-10">
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-xl shadow-lg p-6"
+              className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition"
             >
-              <h2 className="text-2xl font-bold mb-3">
-                {service.title}
-              </h2>
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={700}
+                height={400}
+                className="w-full h-64 object-cover"
+              />
 
-              <p className="text-gray-600 mb-6">
-                {service.description}
-              </p>
+              <div className="p-8">
+                <h2 className="text-3xl font-bold text-sky-700">
+                  {service.title}
+                </h2>
 
-              <Link
-                href={service.link}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg inline-block"
-              >
-                Learn More
-              </Link>
+                <p className="mt-4 text-gray-600 leading-7">
+                  {service.description}
+                </p>
+
+                <button className="mt-6 bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-xl">
+                  Book Now
+                </button>
+              </div>
             </div>
           ))}
         </div>
-      </section>
-    </main>
+
+      </div>
+    </section>
   );
 }

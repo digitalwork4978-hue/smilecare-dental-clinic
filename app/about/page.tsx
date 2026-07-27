@@ -1,58 +1,66 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
-
-      <h1 className="text-5xl font-bold text-center text-sky-700">
-        About SmileCare Dental Clinic
-      </h1>
-
-      <div className="grid md:grid-cols-2 gap-12 mt-16 items-center">
-
-        <img
-          src="/image/clinic.jpg"
-          alt="SmileCare Clinic"
-          className="rounded-3xl shadow-xl"
-        />
-
-        <div>
-
-          <h2 className="text-3xl font-bold">
-            Your Trusted Dental Care Partner
-          </h2>
-
-          <p className="mt-6 text-gray-600 leading-8">
-            SmileCare Dental Clinic provides world-class dental treatments
-            using modern equipment and painless procedures.
+    <>
+      <section className="bg-sky-700 text-white py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-5xl font-bold">About SmileCare</h1>
+          <p className="mt-4 text-xl">
+            Caring for your smile with modern dentistry.
           </p>
+        </div>
+      </section>
 
-          <p className="mt-6 text-gray-600 leading-8">
-            Our experienced dentists specialize in Root Canal Treatment,
-            Dental Implants, Teeth Whitening, Braces, Cosmetic Dentistry,
-            and complete family dental care.
-          </p>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-          <div className="mt-8 flex gap-6">
+          <Image
+            src="/image/clinic.jpg"
+            alt="SmileCare Dental Clinic"
+            width={600}
+            height={400}
+            className="rounded-2xl shadow-xl"
+          />
 
-            <div>
-              <h3 className="text-4xl font-bold text-sky-600">
-                10+
-              </h3>
-              <p>Years Experience</p>
-            </div>
+          <div>
+            <h2 className="text-4xl font-bold text-sky-700 mb-6">
+              Welcome to SmileCare Dental Clinic
+            </h2>
 
-            <div>
-              <h3 className="text-4xl font-bold text-sky-600">
-                5000+
-              </h3>
-              <p>Happy Patients</p>
+            <p className="text-gray-600 leading-8">
+              At SmileCare Dental Clinic, we provide comprehensive dental
+              treatments using modern technology and experienced professionals.
+              Our goal is to deliver painless, affordable, and high-quality
+              dental care for patients of all ages.
+            </p>
+
+            <div className="grid grid-cols-2 gap-6 mt-10">
+              <div className="bg-sky-50 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-sky-700">10+</h3>
+                <p>Years Experience</p>
+              </div>
+
+              <div className="bg-sky-50 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-sky-700">5000+</h3>
+                <p>Happy Patients</p>
+              </div>
+
+              <div className="bg-sky-50 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-sky-700">15+</h3>
+                <p>Dental Services</p>
+              </div>
+
+              <div className="bg-sky-50 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-sky-700">100%</h3>
+                <p>Patient Satisfaction</p>
+              </div>
             </div>
 
           </div>
 
         </div>
-
-      </div>
-
-    </section>
+      </section>
+    </>
   );
 }

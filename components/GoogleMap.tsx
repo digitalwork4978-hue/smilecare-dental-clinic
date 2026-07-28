@@ -22,7 +22,7 @@ export default function GoogleMap() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="strict-origin-when-cross-origin"
-            title="SmileCare Dental Clinic Location"
+            title="Clinic Location"
           />
         </div>
 

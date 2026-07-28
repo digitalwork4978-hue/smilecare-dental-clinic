@@ -110,8 +110,7 @@ export default function AppointmentForm() {
                 value={formData.appointment_date}
                 onChange={handleChange}
                 required
-                className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-sky-500 outline-none"
-              />
+className="w-full p-4 rounded-xl border border-gray-300 bg-white text-gray-900 placeholder:text-gray-500 focus:border-sky-500 focus:ring-2 focus:ring-sky-500 outline-none"              />
 
               <select
                 name="service"
